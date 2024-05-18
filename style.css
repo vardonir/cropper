@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.header-container {
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0; 
+    border-bottom: 1px solid #ddd;
+}
+
+.header-container h1 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.header-container h2 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.header-container p {
+    margin: 10px auto;
+    font-size: 14px;
+    color: #777;
+}
+
+@media (min-width: 768px) {
+    .header-container p {
+        width: 25%; 
+    }
+}
+
+
+@media (max-width: 767px) {
+    .header-container p {
+        width: 100%; 
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #f0f0f0; 
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.button-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    width: auto;
+}
+
+#uploadButton {
+    background-color: #28a745;
+}
+
+#cropButton {
+    background-color: #007bff; 
+}
+
+#rotateButton {
+    background-color: #6c757d; 
+}
+
+#flipButton {
+    background-color: #17a2b8;
+}
+
+#toggleModeButton {
+    background-color: #ffc107;
+}
+
+#downloadButton {
+    background-color: #ffc107;
+}
+
+#clearButton {
+    background-color: #dc3545;
+}
+
+.button-icon {
+    width: 20px; 
+    height: auto;
+    margin-right: 8px;
+}
+
+.crop-size-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f0f0f0; 
+    border-bottom: 1px solid #ddd;
+}
+
+#aspectRatioButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#aspectRatioButtons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#aspectRatioButtons button img {
+    width: 40px; 
+    height: auto;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: calc(100vh - 142px);
+    overflow: hidden;
+}
+
+.gallery-container, .cropped-gallery-container {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+#gallery, #croppedGallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-container h3, .cropped-gallery-container h3 {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.gallery-item, .cropped-gallery-item {
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    width: 80px; 
+    height: auto;
+    flex: 0 0 auto;
+}
+
+.gallery-item img, .cropped-gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.center-area {
+    width: 35%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    height: calc(100vh - 142px - 20px); 
+}
+
+#imageContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+
+#image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.right-side {
+    width: 25%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-left: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+#croppedContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    width: 100%;
+    height: 30%;
+    margin-bottom: 20px;
+}
+
+#croppedImage {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cropper!</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css" integrity="sha512-UtLOu9C7NuThQhuXXrGwx9Jb/z9zPQJctuAgNUBK3Z6kkSYT9wJ+2+dh6klS+TDBCV9kNPBbAxbVD+vCcfGPaA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="header-container">
+        <h1 id="title">Cropper!</h1>
+        <h2 id="subtitle">Upload. Crop. Download. Simple.</h2>
+        <p id="instructions">
+            Client-side image cropping tool. No servers. No ads. No downloads. Not even cookies. Just you and your images. Yes, even those ones, I'm not judging. Developed in under 3 hours with partial assistance from generative AI tools. <a href="https://github.com/tabler/tabler-icons">Icons from Tabler</a>. 
+            <br />
+            Full disclosure: I am using Google Analytics to track page views, but that's it - I just want to know if this tool is being used at all. 
+            <br />
+            <b>Warning: Refreshing the page clears all images.</b> 
+        </p>
+    </div>
+    <div class="button-container">
+        <button id="uploadButton">
+            <img src="icons/upload.svg" alt="Upload Icon" class="button-icon"> Upload Images
+        </button>
+        <button id="cropButton">
+            <img src="icons/crop.svg" alt="Crop Icon" class="button-icon"> Crop Image
+        </button>
+        <button id="rotateButton">
+            <img src="icons/rotate-2.svg" alt="Rotate Icon" class="button-icon"> Rotate Image
+        </button>
+        <button id="flipButton">
+            <img src="icons/flip-horizontal.svg" alt="Flip Icon" class="button-icon"> Flip Image
+        </button>
+        <button id="toggleModeButton">
+            <img src="icons/crosshair.svg" alt="Toggle Mode Icon" class="button-icon"> Toggle Mode: Crop/Move
+        </button>
+        <button id="downloadButton" style="display: none;">
+            <img src="icons/folder-down.svg" alt="Download Icon" class="button-icon"> Download Cropped Images
+        </button>
+        <button id="clearButton" style="display: none;">
+            <img src="icons/x.svg" alt="Clear Icon" class="button-icon"> Clear All
+        </button>
+    </div>
+    <div class="crop-size-container">
+        <div id="aspectRatioButtons">
+            <button data-aspect-ratio="1/1" title="1:1"><img src="icons/crop-1-1.svg" alt="1:1"></button>
+            <button data-aspect-ratio="3/2" title="3:2"><img src="icons/crop-3-2.svg" alt="3:2"></button>
+            <button data-aspect-ratio="5/4" title="5:4"><img src="icons/crop-5-4.svg" alt="5:4"></button>
+            <button data-aspect-ratio="7/5" title="7:5"><img src="icons/crop-7-5.svg" alt="7:5"></button>
+            <button data-aspect-ratio="16/9" title="16:9"><img src="icons/crop-16-9.svg" alt="16:9"></button>
+        </div>
+    </div>
+
+
+    <div class="container">
+    <div class="gallery-container">
+        <h3>Original Images</h3>
+
+      <div id="gallery"></div>
+    </div>
+    <div class="cropped-gallery-container">
+        <h3>Cropped Images</h3>
+
+      <div id="croppedGallery"></div>
+    </div>
+    <div class="center-area">
+      <input type="file" id="imageInput" accept="image/*" multiple style="display: none;">
+      <div id="imageContainer">
+          <img id="image" src="https://placehold.co/600x400?text=Cropper!" alt="Source Image">
+        </div>
+    </div>
+    <div class="right-side">
+      <div id="croppedContainer">
+      <img id="croppedImage" src="https://placehold.co/600x400?text=Preview" alt="Cropped Image">
+  </div>
+</div>
+</div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js" integrity="sha512-JyCZjCOZoyeQZSd5+YEAcFgz2fowJ1F1hyJOXgtKu4llIa0KneLcidn5bwfutiehUTiOuK87A986BZJMko0eWQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.js" integrity="sha512-3FKAKNDHbfUwAgW45wNAvfgJDDdNoTi5PZWU7ak3Xm0X8u0LbDBWZEyPklRebTZ8r+p0M2KIJWDYZQjDPyYQEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.1.0/jszip-utils.min.js" integrity="sha512-3WaCYjK/lQuL0dVIRt1thLXr84Z/4Yppka6u40yEJT1QulYm9pCxguF6r8V84ndP5K03koI9hV1+zo/bUbgMtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      <script src="script.js"></script>
+</body>
+</html>
